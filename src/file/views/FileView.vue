@@ -1,5 +1,15 @@
 <template>
-  <FileHeading />
+  <div>
+    <FileHeading />
+    <div>
+      <CustomerData />
+      <NutritionValues />
+      <WeeklyWeight />
+    </div>
+
+    <DietSchedule />
+    <WorkoutSchedule />
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -8,4 +18,5 @@ import WeeklyWeight from '../components/WeeklyWeight.vue';
 import DietSchedule from '../components/DietSchedule.vue';
 import WorkoutSchedule from '../components/WorkoutSchedule.vue';
 import NutritionValues from '../components/NutritionValues.vue';
+import CustomerData from '../components/CustomerData.vue';
 </script>
