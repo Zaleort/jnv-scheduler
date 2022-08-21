@@ -1,13 +1,14 @@
 <template>
   <div class="previewer__container">
-    <canvas v-html="canvas" />
+    <canvas ref="canvasRef" />
   </div>
 </template>
 
 <script setup lang="ts">
-interface PreviewerProps {
-  canvas?: HTMLCanvasElement;
-}
+import { ref } from 'vue';
+const canvasRef = ref();
 
-const props = defineProps<PreviewerProps>();
+defineExpose({
+  canvasRef,
+});
 </script>
