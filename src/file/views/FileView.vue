@@ -1,18 +1,5 @@
 <template>
-  <div>
-    <header>
-      <img src="" alt="">
-      <div></div>
-    </header>
-
-    <div>
-      <div></div>
-      <main></main>
-      <div></div>
-    </div>
-
-    <div></div>
-  </div>
+  <FileHeading />
 </template>
 
 <script setup lang="ts">
