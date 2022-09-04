@@ -1,0 +1,11 @@
+.diet-schedule {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  flex-grow: 1;
+
+  & h2 {
+    margin: 0 auto;
+    margin-bottom: 1em;
+  }
+}
