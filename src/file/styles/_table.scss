@@ -1,0 +1,10 @@
+.table {
+  border-collapse: collapse;
+  border-radius: 2px;
+  flex-grow: 1;
+  width: 100%;
+
+  & th, & td {
+    padding: 8px;
+  }
+}

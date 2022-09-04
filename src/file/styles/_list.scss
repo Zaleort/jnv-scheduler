@@ -1,0 +1,25 @@
+@use './variables' as jnv;
+
+.list-block {
+  display: block;
+  padding: 24px;
+  border-radius: 2px;
+  flex-grow: 1;
+  flex-shrink: 0;
+
+  &__title {
+    margin: 0;
+    margin-bottom: 1em;
+    text-align: center;
+  }
+
+  &__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    & li {
+      padding: 3px 0;
+    }
+  }
+}
