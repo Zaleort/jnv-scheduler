@@ -1,0 +1,31 @@
+@use './variables' as jnv;
+
+.file {
+  background-color: #212121;
+  background-image: url('@/assets/background.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  color: #F0F0F0;
+  font-family: 'Simsun', serif;
+  letter-spacing: 1.5px;
+  line-height: 1.3;
+
+  &__basic-data {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.file-background-mask {
+  padding: 24px;
+  background-color: jnv.$background-dark;
+}
+
+.file__subheading {
+  display: inline-block;
+  margin: 16px auto;
+  border-bottom: 2px solid jnv.$primary;
+  text-align: center;
+}
