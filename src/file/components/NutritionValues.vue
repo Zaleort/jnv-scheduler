@@ -1,13 +1,39 @@
 <template>
-  <div class="nutrition-values">
-    
-  </div>
+  <table class="table nutrition-values">
+    <thead>
+      <tr>
+        <th class="green" align="center">PROTEÍNAS</th>
+        <th class="orange" align="center">HIDRATOS DE CARBONO</th>
+        <th class="red" align="center">GRASAS</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td align="center">{{ proteins }} GRAMOS</td>
+        <td align="center">{{ carbohydrates }} GRAMOS</td>
+        <td align="center">{{ fat }} GRAMOS</td>
+      </tr>
+      <tr>
+        <td align="center">{{ proteinCalories }} KCAL</td>
+        <td align="center">{{ carbohydratesCalories }} KCAL</td>
+        <td align="center">{{ fatCalories }} KCAL</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td align="center">
+          <strong>TOTAL</strong> {{ totalCalories }} KCAL
+        </td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue';
 
-interface NutritionValues {
+export interface NutritionValues {
   proteins: number;
   carbohydrates: number;
   fat: number;
