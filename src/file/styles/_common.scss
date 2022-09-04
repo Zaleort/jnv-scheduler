@@ -1,0 +1,7 @@
+@use './variables' as jnv;
+
+.pink    { color: jnv.$pink    }
+.red     { color: jnv.$red     }
+.yellow  { color: jnv.$yellow  }
+.orange  { color: jnv.$orange  }
+.green   { color: jnv.$green   }
