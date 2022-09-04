@@ -1,1 +1,12 @@
-@use './fileHeading';
+@use './common';
+@use './table';
+@use './list';
+
+@use './customer-data';
+@use './diet-schedule';
+@use './file';
+@use './file-heading';
+@use './nutrition-values';
+@use './observations';
+@use './weekly-weight';
+@use './workout-schedule';
