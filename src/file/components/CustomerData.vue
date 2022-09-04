@@ -1,8 +1,17 @@
 <template>
-  <div class="customer-data">
-    <span>Nombre: {{ name }}</span>
-    <span>Móvil: {{ phone }}</span>
-    <span>Correo: {{ email }}</span>
+  <div class="list-block">
+    <h2 class="list-block__title">Ficha cliente</h2>
+    <ul class="list-block__list">
+      <li>
+        <strong>NOMBRE:</strong> {{ name }}
+      </li>
+      <li>
+        <strong>MÓVIL</strong>: {{ phone }}
+      </li>
+      <li>
+        <strong>CORREO</strong>: {{ email }}
+      </li>
+    </ul>
   </div>
 </template>
 
