@@ -1,0 +1,21 @@
+@use './variables' as jnv;
+
+.workout-schedule {
+  display: flex;
+  flex-direction: column;
+
+  & h2 {
+    margin: 0 auto;
+    margin-bottom: 1em;
+  }
+
+  &__table {
+    & tr:first-child th:not(:last-child) {
+      border-right: 1px solid white;
+    }
+
+    & th:nth-child(2n):not(:last-child), & td:nth-child(2n):not(:last-child) {
+      border-right: 1px solid white;
+    }
+  }
+}
