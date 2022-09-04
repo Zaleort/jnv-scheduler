@@ -1,14 +1,16 @@
 <template>
-  <div>
-    <FileHeading />
-    <div>
-      <CustomerData />
-      <NutritionValues />
-      <WeeklyWeight />
-    </div>
+  <div class="file">
+    <div class="file-background-mask">
+      <FileHeading />
+      <div class="file__basic-data">
+        <CustomerData />
+        <DietSchedule />
+        <WeeklyWeight />
+      </div>
 
-    <DietSchedule />
-    <WorkoutSchedule />
+      <WorkoutSchedule />
+      <Observations />
+    </div>
   </div>
 </template>
 
@@ -19,4 +21,5 @@ import DietSchedule from '../components/DietSchedule.vue';
 import WorkoutSchedule from '../components/WorkoutSchedule.vue';
 import NutritionValues from '../components/NutritionValues.vue';
 import CustomerData from '../components/CustomerData.vue';
+import Observations from '../components/Observations.vue';
 </script>
