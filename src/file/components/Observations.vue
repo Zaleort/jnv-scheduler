@@ -1,6 +1,6 @@
 <template>
   <div class="observations">
-    <h2 class="observations__title">Observaciones</h2>
+    <h3 class="observations__title">Observaciones</h3>
     <div class="observations__content">
       {{ observations }}
     </div>

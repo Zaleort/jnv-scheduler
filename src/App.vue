@@ -2,7 +2,7 @@
   <div>
     <FileView ref="fileRef"/>
     <Previewer ref="previewerRef" :canvas="canvas" />
-    <button @click="createCanvas">Generar</button>
+    <ui-button @click="createCanvas">Generar</ui-button>
   </div>
 </template>
 

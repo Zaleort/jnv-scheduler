@@ -1,6 +1,6 @@
 <template>
   <div class="previewer__container">
-    <canvas ref="canvasRef" />
+
   </div>
 </template>
 

@@ -5,9 +5,12 @@
   margin-top: 16px;
 
   &__title {
+    display: block;
     text-align: center;
     margin: 0;
     margin-bottom: 8px;
+    color: white;
+    font-size: 1.3em;
   }
 
   &__content {

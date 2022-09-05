@@ -1,6 +1,6 @@
 <template>
   <div class="list-block">
-    <h2 class="list-block__title">Ficha cliente</h2>
+    <h3 class="list-block__title">Ficha cliente</h3>
     <ul class="list-block__list">
       <li>
         <strong>NOMBRE:</strong> {{ name }}
