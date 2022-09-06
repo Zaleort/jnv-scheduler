@@ -1,0 +1,75 @@
+.heading {
+  justify-content: space-between;
+
+  &.is-wrap {
+    flex-wrap: wrap;
+  }
+
+  &__back {
+    margin-right: 12px;
+    @include tablet {
+      margin-right: 16px;
+    }
+  }
+
+  &__icon {
+    margin-right: 12px;
+    @include tablet {
+      margin-right: 16px;
+    }
+  }
+
+  &__tag {
+    margin-left: 12px;
+    @include tablet {
+      margin-left: 16px;
+    }
+  }
+
+  &__main {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    margin-right: $margin-s;
+  }
+
+  &__title-container {
+    display: block;
+  } 
+
+  &__title {
+    display: flex;
+    align-items: center;
+  }
+
+  &__subtitle {
+    display: block;
+    color: $text-color;
+    font-weight: $font-weight-normal;
+    font-size: $font-size-secondary;
+
+    @include tablet {
+      font-size: $font-size-body;
+    }
+
+    @include desktop-l {
+      font-size: $font-size-h3;
+    }
+  }
+
+  &__action {
+    display: flex;
+    align-items: center;
+    margin: $margin-xs 0;
+  } 
+
+  &__dropdown {
+    display: block;
+    margin-left: $margin-xs;
+
+    & > div {
+      display: flex;
+      align-items: center;
+    }
+  }
+}

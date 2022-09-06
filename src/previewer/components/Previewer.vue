@@ -8,7 +8,6 @@
 
     <template #footer>
       <ui-button
-        @click="downloadImg"
         icon="download"
         class="ml-xs"
       >
