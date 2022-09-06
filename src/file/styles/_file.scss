@@ -1,6 +1,10 @@
 @use './variables' as jnv;
 
 .file {
+  position: absolute;
+  left: -3000px;
+  width: 1800px;
+
   background-color: #212121;
   background-image: url('@/assets/background.jpeg');
   background-repeat: no-repeat;

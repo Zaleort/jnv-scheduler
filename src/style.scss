@@ -1,2 +1,11 @@
 @use '@/file/styles/index' as file;
 @use '@/previewer/styles/index' as previewer;
+
+.ui-topbar--black {
+  background-color: #141619;
+}
+
+.ui-panel {
+  margin: 0 auto;
+  max-width: 1200px;
+}

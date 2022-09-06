@@ -4,12 +4,20 @@
       Previsualización
     </template>
 
-    <div ref="containerRef" class="previewer__container">
-
-    </div>
+    <img :src="imgUrl" alt="preview" class="previewer">
 
     <template #footer>
       <ui-button
+        @click="downloadImg"
+        icon="download"
+        class="ml-xs"
+      >
+        <a :href="imgUrl" download class="previewer__link">Descargar</a>
+      </ui-button>
+
+      <ui-button
+        plain
+        icon="xLarge"
         @click="close"
       >
         Cerrar
@@ -36,11 +44,20 @@ const innerVisibility = computed({
   set: (val) => emit('update:visibility', val),
 });
 
+const imgUrl = ref('');
+const getCanvasUrl = () => {
+  if (!props.canvas) return;
+  props.canvas.toBlob(blob => {
+    if (!blob) return;
+    imgUrl.value = URL.createObjectURL(blob);
+  });
+}
+
 const close = () => emit('update:visibility', false);
 
 watch(() => props.canvas, () => {
-  if (!containerRef.value || !props.canvas) return;
-  containerRef.value.innerHTML = '';
-  containerRef.value.appendChild(props.canvas);
+  if (!props.canvas) return;
+  getCanvasUrl();
 });
+
 </script>
