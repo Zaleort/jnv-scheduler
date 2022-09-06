@@ -1,5 +1,9 @@
+
 @use '@/file/styles/index' as file;
 @use '@/previewer/styles/index' as previewer;
+@import '@brokalia/ui/src/scss/main.scss';
+
+@import '@/styles/heading';
 
 .ui-topbar--black {
   background-color: #141619;

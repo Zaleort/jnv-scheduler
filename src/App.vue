@@ -27,7 +27,7 @@ import logo from '@/assets/logo-cropped.png';
 import html2canvas from 'html2canvas';
 import FileView from './file/views/FileView.vue';
 import Previewer from './previewer/components/Previewer.vue';
-import FileForm from './form/components/FileForm.vue';
+import FileForm from './file/components/FileForm.vue';
 
 const fileRef = ref();
 const showPreviewer = ref(false);
