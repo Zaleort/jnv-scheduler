@@ -10,19 +10,19 @@
 
     <tbody>
       <tr>
-        <td align="center">{{ proteins }} GRAMOS</td>
-        <td align="center">{{ carbohydrates }} GRAMOS</td>
-        <td align="center">{{ fat }} GRAMOS</td>
+        <td align="center">{{ proteinMass }} GRAMOS</td>
+        <td align="center">{{ carbohydratesMass }} GRAMOS</td>
+        <td align="center">{{ fatMass }} GRAMOS</td>
       </tr>
       <tr>
-        <td align="center">{{ proteinCalories }} KCAL</td>
-        <td align="center">{{ carbohydratesCalories }} KCAL</td>
-        <td align="center">{{ fatCalories }} KCAL</td>
+        <td align="center">{{ proteins }} KCAL</td>
+        <td align="center">{{ carbohydrates }} KCAL</td>
+        <td align="center">{{ fat }} KCAL</td>
       </tr>
       <tr>
         <td></td>
         <td align="center">
-          <strong>TOTAL</strong> {{ totalCalories }} KCAL
+          <strong>TOTAL</strong> {{ total }} KCAL
         </td>
         <td></td>
       </tr>
@@ -45,9 +45,9 @@ const props = withDefaults(defineProps<NutritionValues>(), {
   fat: 0,
 });
 
-const proteinCalories = computed(() => props.proteins * 4);
-const carbohydratesCalories = computed(() => props.carbohydrates * 4);
-const fatCalories = computed(() => props.fat * 9);
+const proteinMass = computed(() => props.proteins / 4);
+const carbohydratesMass = computed(() => props.carbohydrates / 4);
+const fatMass = computed(() => props.fat / 9);
 
-const totalCalories = computed(() => proteinCalories.value + fatCalories.value + carbohydratesCalories.value);
+const total = computed(() => props.proteins + props.fat + props.carbohydrates);
 </script>
