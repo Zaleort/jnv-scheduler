@@ -47,13 +47,16 @@
         </tr>
       </tbody>
     </table>
+
+    <Observations :observations="observations" />
   </div>
 </template>
 
 <script setup lang="ts">
+import Observations from './Observations.vue';
   interface WorkoutDay {
-    exercise: string;
-    volume: string;
+    exercise: string[];
+    volume: string[];
   }
 
   interface WorkoutScheduleProps {

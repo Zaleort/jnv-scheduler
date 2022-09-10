@@ -10,19 +10,19 @@
 
     <tbody>
       <tr>
-        <td align="center">{{ proteinMass }} GRAMOS</td>
-        <td align="center">{{ carbohydratesMass }} GRAMOS</td>
-        <td align="center">{{ fatMass }} GRAMOS</td>
+        <td align="center">{{ formatNumber(proteinMass) }} GRAMOS</td>
+        <td align="center">{{ formatNumber(carbohydratesMass) }} GRAMOS</td>
+        <td align="center">{{ formatNumber(fatMass) }} GRAMOS</td>
       </tr>
       <tr>
-        <td align="center">{{ proteins }} KCAL</td>
-        <td align="center">{{ carbohydrates }} KCAL</td>
-        <td align="center">{{ fat }} KCAL</td>
+        <td align="center">{{ formatNumber(proteins) }} KCAL</td>
+        <td align="center">{{ formatNumber(carbohydrates) }} KCAL</td>
+        <td align="center">{{ formatNumber(fat) }} KCAL</td>
       </tr>
       <tr>
         <td></td>
         <td align="center">
-          <strong>TOTAL</strong> {{ total }} KCAL
+          <strong>TOTAL</strong> {{ formatNumber(total) }} KCAL
         </td>
         <td></td>
       </tr>
@@ -32,6 +32,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
+import { formatNumber } from '@/lib/util';
 
 export interface NutritionValues {
   proteins: number;

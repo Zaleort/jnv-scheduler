@@ -2,7 +2,11 @@
   <div class="diet-schedule">
     <h2 class="file__subheading">DIETA</h2>
 
-    <NutritionValues v-bind="nutritionValues" />
+    <NutritionValues 
+      :proteins="proteins"
+      :carbohydrates="carbohydrates"
+      :fat="fat"
+    />
     <Observations :observations="observations" />
   </div>
 </template>
@@ -13,11 +17,9 @@
 
   interface DietScheduleProps {
     observations?: string;
-    nutritionValues: {
-      proteins: number;
-      carbohydrates: number;
-      fat: number;
-    }
+    proteins: number;
+    carbohydrates: number;
+    fat: number;
   }
 
   defineProps<DietScheduleProps>()

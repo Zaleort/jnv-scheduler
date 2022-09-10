@@ -57,8 +57,6 @@
       <ui-form-item
         :label="'Semana ' + (i + 1)"
         :m="12"
-        :t="6"
-        :dl="4"
       >
         <div class="remove">
 
@@ -97,16 +95,17 @@
 <script setup lang="ts">
   import { reactive } from 'vue';
 import Heading from '../../components/Heading.vue';
+import { FileFormData } from '../types/FileFormData';
 
   const emit = defineEmits(['submit']);
 
-  const data = reactive({
+  const data: FileFormData = reactive({
     name: '',
     phone: '',
     email: '',
-    proteins: undefined,
-    carbohydrates: undefined,
-    fat: undefined,
+    proteins: 0,
+    carbohydrates: 0,
+    fat: 0,
     dietObservations: '',
     weights: [0],
   })
