@@ -23,27 +23,27 @@
       </thead>
 
       <tbody>
-        <tr>
-          <td>{{ mon?.exercise }}</td>
-          <td>{{ mon?.volume }}</td>
+        <tr v-for="workout of workouts">
+          <td>{{ workout.mon.exercise }}</td>
+          <td>{{ workout.mon.volume }}</td>
           
-          <td>{{ tue?.exercise }}</td>
-          <td>{{ tue?.volume }}</td>
+          <td>{{ workout.tue.exercise }}</td>
+          <td>{{ workout.tue.volume }}</td>
           
-          <td>{{ wed?.exercise }}</td>
-          <td>{{ wed?.volume }}</td>
+          <td>{{ workout.wed.exercise }}</td>
+          <td>{{ workout.wed.volume }}</td>
           
-          <td>{{ thu?.exercise }}</td>
-          <td>{{ thu?.volume }}</td>
+          <td>{{ workout.thu.exercise }}</td>
+          <td>{{ workout.thu.volume }}</td>
           
-          <td>{{ fri?.exercise }}</td>
-          <td>{{ fri?.volume }}</td>
+          <td>{{ workout.fri.exercise }}</td>
+          <td>{{ workout.fri.volume }}</td>
           
-          <td>{{ sat?.exercise }}</td>
-          <td>{{ sat?.volume }}</td>
+          <td>{{ workout.sat.exercise }}</td>
+          <td>{{ workout.sat.volume }}</td>
           
-          <td>{{ sun?.exercise }}</td>
-          <td>{{ sun?.volume }}</td>
+          <td>{{ workout.sun.exercise }}</td>
+          <td>{{ workout.sun.volume }}</td>
         </tr>
       </tbody>
     </table>
@@ -54,20 +54,28 @@
 
 <script setup lang="ts">
 import Observations from './Observations.vue';
-  interface WorkoutDay {
-    exercise: string[];
-    volume: string[];
-  }
 
-  interface WorkoutScheduleProps {
-    mon: WorkoutDay;
-    tue: WorkoutDay;
-    wed: WorkoutDay;
-    thu: WorkoutDay;
-    fri: WorkoutDay;
-    sat: WorkoutDay;
-    sun: WorkoutDay; 
-  }
+export interface Workout {
+  mon: WorkoutDay;
+  tue: WorkoutDay;
+  wed: WorkoutDay;
+  thu: WorkoutDay;
+  fri: WorkoutDay;
+  sat: WorkoutDay;
+  sun: WorkoutDay;
+}  
 
-  const props = defineProps<WorkoutScheduleProps>()
+export interface WorkoutDay {
+  exercise: string;
+  volume: string;
+}
+
+export interface WorkoutScheduleProps {
+  workouts?: Workout[];
+  observations?: string; 
+}
+
+const props = withDefaults(defineProps<WorkoutScheduleProps>(), {
+  workouts: () => [],
+})
 </script>

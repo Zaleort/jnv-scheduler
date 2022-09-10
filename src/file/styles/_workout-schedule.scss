@@ -12,6 +12,13 @@
   }
 
   &__table {
+    table-layout: fixed;
+
+    & td {
+      letter-spacing: normal;
+      text-align: center;
+    }
+
     & tr:first-child th:not(:last-child) {
       border-right: 1px solid white;
     }
