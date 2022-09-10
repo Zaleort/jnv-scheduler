@@ -1,3 +1,4 @@
+import { Workout } from './Workout';
 export interface FileFormData {
   name: string,
   phone: string,
@@ -7,4 +8,6 @@ export interface FileFormData {
   fat: number,
   dietObservations: string,
   weights: number[],
+  workouts: Workout[],
+  workoutObservations: string;
 }

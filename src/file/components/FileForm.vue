@@ -81,6 +81,145 @@
       </ui-form-item>
     </template>
 
+    <ui-form-item :m="12">
+      <Heading level="2">
+        Programación
+      </Heading>
+    </ui-form-item>
+    <ui-form-item :m="12">
+      <ui-button
+        icon="plus"
+        color="primary"
+        class="mr-s mb-s"
+        pill
+        @click="addWorkout"
+      >
+        Añadir ejercicios
+      </ui-button>
+    </ui-form-item>
+    <ui-form-item :m="12" :d="6">
+      <Heading level="3">
+        Lunes
+      </Heading>
+      <ui-row v-for="workout of data.workouts" gutter-v="xs" gutter="s" >
+        <ui-col :m="12" :ml="6">
+          <ui-label label="Ejercicio">
+            <ui-input v-model:value="workout.mon.exercise" />
+          </ui-label>
+        </ui-col>
+        <ui-col :m="12" :ml="6">
+          <ui-label label="Volumen">
+            <ui-input v-model:value="workout.mon.volume" />
+          </ui-label>
+        </ui-col>
+      </ui-row> 
+    </ui-form-item>
+    <ui-form-item :m="12" :d="6">
+      <Heading level="3">
+        Martes
+      </Heading>
+      <ui-row v-for="workout of data.workouts" gutter-v="xs" gutter="s" >
+        <ui-col :m="12" :ml="6">
+          <ui-label label="Ejercicio">
+            <ui-input v-model:value="workout.tue.exercise" />
+          </ui-label>
+        </ui-col>
+        <ui-col :m="12" :ml="6">
+          <ui-label label="Volumen">
+            <ui-input v-model:value="workout.tue.volume" />
+          </ui-label>
+        </ui-col>
+      </ui-row> 
+    </ui-form-item>
+    <ui-form-item :m="12" :d="6">
+      <Heading level="3">
+        Miércoles
+      </Heading>
+      <ui-row v-for="workout of data.workouts" gutter-v="xs" gutter="s" >
+        <ui-col :m="12" :ml="6">
+          <ui-label label="Ejercicio">
+            <ui-input v-model:value="workout.wed.exercise" />
+          </ui-label>
+        </ui-col>
+        <ui-col :m="12" :ml="6">
+          <ui-label label="Volumen">
+            <ui-input v-model:value="workout.wed.volume" />
+          </ui-label>
+        </ui-col>
+      </ui-row> 
+    </ui-form-item>
+    <ui-form-item :m="12" :d="6">
+      <Heading level="3">
+        Jueves
+      </Heading>
+      <ui-row v-for="workout of data.workouts" gutter-v="xs" gutter="s" >
+        <ui-col :m="12" :ml="6">
+          <ui-label label="Ejercicio">
+            <ui-input v-model:value="workout.thu.exercise" />
+          </ui-label>
+        </ui-col>
+        <ui-col :m="12" :ml="6">
+          <ui-label label="Volumen">
+            <ui-input v-model:value="workout.thu.volume" />
+          </ui-label>
+        </ui-col>
+      </ui-row> 
+    </ui-form-item>
+    <ui-form-item :m="12" :d="6">
+      <Heading level="3">
+        Viernes
+      </Heading>
+      <ui-row v-for="workout of data.workouts" gutter-v="xs" gutter="s" >
+        <ui-col :m="12" :ml="6">
+        <ui-label label="Ejercicio">
+          <ui-input v-model:value="workout.fri.exercise" />
+        </ui-label>
+        </ui-col>
+        <ui-col :m="12" :ml="6">
+          <ui-label label="Volumen">
+            <ui-input v-model:value="workout.fri.volume" />
+          </ui-label>
+        </ui-col>
+      </ui-row> 
+    </ui-form-item>
+    <ui-form-item :m="12" :d="6">
+      <Heading level="3">
+        Sábado
+      </Heading>
+      <ui-row v-for="workout of data.workouts" gutter-v="xs" gutter="s" >
+        <ui-col :m="12" :ml="6">
+          <ui-label label="Ejercicio">
+            <ui-input v-model:value="workout.sat.exercise" />
+          </ui-label>
+        </ui-col>
+        <ui-col :m="12" :ml="6">
+          <ui-label label="Volumen">
+            <ui-input v-model:value="workout.sat.volume" />
+          </ui-label>
+        </ui-col>
+      </ui-row> 
+    </ui-form-item>
+    <ui-form-item :m="12" :d="6">
+      <Heading level="3">
+        Domingo
+      </Heading>
+      <ui-row v-for="workout of data.workouts" gutter-v="xs" gutter="s" >
+        <ui-col :m="12" :ml="6">
+          <ui-label label="Ejercicio">
+            <ui-input v-model:value="workout.sun.exercise" />
+          </ui-label>
+        </ui-col>
+        <ui-col :m="12" :ml="6">
+          <ui-label label="Volumen">
+            <ui-input v-model:value="workout.sun.volume" />
+          </ui-label>
+        </ui-col>
+      </ui-row> 
+    </ui-form-item>
+    <ui-form-item :m="12" label="Observaciones de la programación">
+      <ui-input type="textarea" rows="4" v-model:value="data.workoutObservations" />
+    </ui-form-item>
+
     <ui-form-item :m="12" class="text-right">
       <ui-button
         icon="plus"
@@ -93,7 +232,7 @@
 </template>
 
 <script setup lang="ts">
-  import { reactive } from 'vue';
+  import { onMounted, reactive } from 'vue';
 import Heading from '../../components/Heading.vue';
 import { FileFormData } from '../types/FileFormData';
 
@@ -108,12 +247,49 @@ import { FileFormData } from '../types/FileFormData';
     fat: 0,
     dietObservations: '',
     weights: [0],
+    workouts: [],
+    workoutObservations: '',
   })
 
   const submit = () => emit('submit', data);
 
   const addWeight = () => data.weights.push(0);
   const removeWeight = (index: number) => data.weights.splice(index, 1);
+
+  const addWorkout = () => {
+    data.workouts.push({
+      mon: {
+        exercise: '',
+        volume: '',
+      },
+      tue: {
+        exercise: '',
+        volume: '',
+      },
+      wed: {
+        exercise: '',
+        volume: '',
+      },
+      thu: {
+        exercise: '',
+        volume: '',
+      },
+      fri: {
+        exercise: '',
+        volume: '',
+      },
+      sat: {
+        exercise: '',
+        volume: '',
+      },
+      sun: {
+        exercise: '',
+        volume: '',
+      },
+    })
+  };
+
+  onMounted(() => addWorkout());
 </script>
 
 <style lang="scss" scoped>

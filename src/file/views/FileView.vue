@@ -17,7 +17,7 @@
         <WeeklyWeight :weights="weights" />
       </div>
 
-      <WorkoutSchedule />
+      <WorkoutSchedule :workouts="workouts" :observations="workoutObservations" />
     </div>
   </div>
 </template>
@@ -27,7 +27,7 @@ import CustomerData from '../components/CustomerData.vue';
 import FileHeading from '../components/FileHeading.vue';
 import WeeklyWeight from '../components/WeeklyWeight.vue';
 import DietSchedule from '../components/DietSchedule.vue';
-import WorkoutSchedule from '../components/WorkoutSchedule.vue';
+import WorkoutSchedule, { Workout } from '../components/WorkoutSchedule.vue';
 
 export interface FileViewProps {
   name: string,
@@ -38,6 +38,8 @@ export interface FileViewProps {
   fat: number,
   dietObservations: string,
   weights: number[],
+  workouts: Workout[],
+  workoutObservations: string;
 }
 
 defineProps<FileViewProps>();
