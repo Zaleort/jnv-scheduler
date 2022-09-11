@@ -16,7 +16,9 @@
     </ui-form-item>
 
     <ui-form-item :m="12">
-      <Heading level="2">Dieta</Heading>
+      <Heading level="2" icon="egg">
+        Dieta
+      </Heading>
     </ui-form-item>
     <ui-form-item :m="12" :d="4" label="Proteínas">
       <ui-input type="number" v-model:value="data.proteins">
@@ -38,7 +40,7 @@
     </ui-form-item>
 
     <ui-form-item :m="12">
-      <Heading level="2">
+      <Heading level="2" icon="chart">
         Seguimiento semanal
       </Heading>
     </ui-form-item>
@@ -82,7 +84,7 @@
     </template>
 
     <ui-form-item :m="12">
-      <Heading level="2">
+      <Heading level="2" icon="calendar">
         Programación
       </Heading>
     </ui-form-item>
